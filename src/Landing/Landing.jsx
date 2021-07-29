@@ -2,6 +2,7 @@ import React from 'react'
 import Switch from '@material-ui/core/Switch';
 import Paper from '@material-ui/core/Paper';
 import Zoom from '@material-ui/core/Zoom';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -11,6 +12,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import grant from './FB_IMG_1627059826106.jpg'
+import david from './david.png'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -33,16 +35,34 @@ const useStyles = makeStyles((theme) => ({
           marginTop: '40px',
           },
           media: {
-            height: 120,
+            height: 100,
           },
       },
     }));
 
 function Landing() {
     const classes = useStyles();
+    const [checked, setChecked] = React.useState(false);
+  
+    const handleChange = () => {
+      setChecked((prev) => !prev);
+    };
 
     return (
         <div>
+		<div className={classes.root}>
+		<FormControlLabel style={{color: "blue", fontSize: "70px"}}
+		  control={<Switch checked={checked} onChange={handleChange} />}
+		  label="CardWorks Statement"
+		/>
+		<div className={classes.container}>
+		  <Zoom in={checked}>
+			<Paper elevation={4} className={classes.paper}>	 
+				<p className="Paragraph"> CardWorks is a 52 card deck game site. Currently, we offer the opportunity to play War. Check out our "How to" on instructions for playing.</p>
+			</Paper>
+		  </Zoom>
+		</div>
+	  </div>
             <div class="float-container" style ={{
     padding: '20px'}}>
   <div class="float-child" style={{ width: '30%',
@@ -83,7 +103,7 @@ function Landing() {
         <CardMedia
     style={{height: 440}}
           className={classes.media}
-          image="https://media-exp1.licdn.com/dms/image/D5635AQF5awqRm8-lCw/profile-framedphoto-shrink_800_800/0/1626526501847?e=1627596000&v=beta&t=owtOtm3vPlqD54yxyTHCxW58RbNcEnTfHsh70VyzJlE"
+          image={david}
           title="Photo of Founder"
         />
         <CardContent>
