@@ -14,8 +14,17 @@ This was our first hackathon with Mintbean and we had a lot of fun trying to do 
 
 
 
+Ashley contact info:
+email - ashleyknorr@gmail.com
+linkedin - https://www.linkedin.com/in/ashley-knorr-gehring/
 
+David contact info: 
+email - davidhenshaw2014@gmail.com
+linkedin - https://www.linkedin.com/in/david-a-henshaw/
 
+Grant contact info: 
+email - grantnicholsdev@gmail.com
+linkedin - https://www.linkedin.com/in/grant-nichols-dev/
 
 
 
