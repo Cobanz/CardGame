@@ -1,38 +1,28 @@
 # Live Site - [Click Here](https://card-game-nichols-henshaw-gehring.netlify.app/).
 
 
-## When you first clone the repo be sure to run 
+Ashley Gehring contact info:
+email - ashleyknorr@gmail.com
+linkedin - https://www.linkedin.com/in/ashley-knorr-gehring/
 
+David Henshaw contact info: 
+email - davidhenshaw2014@gmail.com
+linkedin - https://www.linkedin.com/in/david-a-henshaw/
+
+Grant Nichols contact info: 
+email - grantnicholsdev@gmail.com
+linkedin - https://www.linkedin.com/in/grant-nichols-dev/
+
+<br/>
 ### `npm install` to get all the packages
 
 when ready to play the game locally you can run the command. 
 
 ### `npm start` this will open up in a side thing. 
 
+<br/>
 
 This was our first hackathon with Mintbean and we had a lot of fun trying to do smoething we havnt done before with all the logic that the war game had. Please let us know if you enjoyed it. 
-
-
-
-Ashley contact info:
-email - ashleyknorr@gmail.com
-linkedin - https://www.linkedin.com/in/ashley-knorr-gehring/
-
-David contact info: 
-email - davidhenshaw2014@gmail.com
-linkedin - https://www.linkedin.com/in/david-a-henshaw/
-
-Grant contact info: 
-email - grantnicholsdev@gmail.com
-linkedin - https://www.linkedin.com/in/grant-nichols-dev/
-
-
-
-
-
-
-
-
 
 
 
