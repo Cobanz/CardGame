@@ -1,8 +1,36 @@
 # Live Site - [Click Here](https://card-game-nichols-henshaw-gehring.netlify.app/).
 
+
+## When you first clone the repo be sure to run 
+
+### `npm install` to get all the packages
+
+when ready to play the game locally you can run the command. 
+
+### `npm start` this will open up in a side thing. 
+
+
+This was our first hackathon with Mintbean and we had a lot of fun trying to do smoething we havnt done before with all the logic that the war game had. Please let us know if you enjoyed it. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------- provided verbage from npm create react app -------------------------------------------
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).****
 
 ## Available Scripts
 
