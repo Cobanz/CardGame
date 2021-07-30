@@ -111,7 +111,7 @@ function Landing() {
             David Henshaw
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-          About David 
+          David is a former electrical engineer with 2 years of experience. While first being introduced to programming in high school, he decided to jump into the industry head on following the Covid-19 recession. David spends his time in Houston, TX writing/producing music and designing video games on the side. 
 		  </Typography>
         </CardContent>
       </CardActionArea>
