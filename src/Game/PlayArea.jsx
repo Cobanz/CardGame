@@ -48,6 +48,7 @@ function PlayArea(props) {
     return (
         <div>
             <div>
+                <button onClick={flipCards}>War</button>
                 <div className="player_field">
                     player
                     <div className="player_deck">
@@ -60,7 +61,6 @@ function PlayArea(props) {
                         {displayCard(cards.opponent)}
                     </div>
                 </div>
-                <button onClick={flipCards}>War</button>
             </div>
         </div>
     )
