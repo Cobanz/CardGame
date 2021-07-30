@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 function Game() {
     let deck_id = "vgqhkmecfsol";
-    const [playerHand, setPlayerHand] = useState([]);
-    const [opponentHand, setOpponentHand] = useState([]);
 
     function fetchDeckId()
     {
@@ -16,7 +14,6 @@ function Game() {
                     .then( res => res.json())
                     .then( data => {
                         deck_id = data.deck_id;
-                        console.log(deck_id);
                         resolve(deck_id);
                     })
             })
@@ -29,11 +26,9 @@ function Game() {
                     .then( res => res.json())
                     .then( data => {
                         deck_id = data.deck_id;
-                        console.log(deck_id);
                         resolve(deck_id);
                     })
             })
-
         }
 
         return promise;
@@ -59,7 +54,6 @@ function Game() {
             .then( res => res.json() )
             .then( data => {
                 console.log(data);
-                setPlayerHand(data.cards);
             })
         )
     }
