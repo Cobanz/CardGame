@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import PlayArea from './PlayArea';
 
 function Game() {
     let deck_id = "vgqhkmecfsol";
@@ -45,25 +46,12 @@ function Game() {
         )
     }
 
-    function addPlayerHand(cards)
+    function addCardsToPile(cards, pileName)
     {
         let codes = cards.map( card => {return card.code} );
 
         return (
-            fetch(`http://deckofcardsapi.com/api/deck/${deck_id}/pile/playerHand/add/?cards=${codes.join()}`)
-            .then( res => res.json() )
-            .then( data => {
-                console.log(data);
-            })
-        )
-    }
-
-    function addOpponentHand(cards)
-    {
-        let codes = cards.map( card => {return card.code} );
-
-        return (
-            fetch(`http://deckofcardsapi.com/api/deck/${deck_id}/pile/opponentHand/add/?cards=${codes.join()}`)
+            fetch(`http://deckofcardsapi.com/api/deck/${deck_id}/pile/${pileName}/add/?cards=${codes.join()}`)
             .then( res => res.json() )
             .then( data => {
                 console.log(data);
@@ -77,24 +65,24 @@ function Game() {
         console.log(response);
 
         splitDeck()
-            .then( data => addPlayerHand(data.cards) );
+            .then( data => addCardsToPile(data.cards, "playerHand") );
         splitDeck()
-            .then( data => addOpponentHand(data.cards) );
+            .then( data => addCardsToPile(data.cards, "opponentHand") );
     }
 
     useEffect( () => {
         startupSequence();
     } )
 
-    // useEffect( () => { splitDeck() } )
-
     return (
-        <div>
-            Game {deck_id}
+        <div className="game_container">
+            <div>
+                Game {deck_id}
+                <PlayArea deck_id={deck_id} />
+            </div>
         </div>
     )
 }
-
 
 
 export default Game
