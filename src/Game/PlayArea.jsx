@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 function PlayArea(props) {
     let {deck_id} = props;
