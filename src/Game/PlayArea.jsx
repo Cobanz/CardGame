@@ -18,7 +18,7 @@ function PlayArea(props) {
     function drawCard(pileName)
     {
        return new Promise( resolve => {
-            fetch(`http://deckofcardsapi.com/api/deck/${deck_id}/pile/${pileName}/draw/?count=1`)
+            fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/pile/${pileName}/draw/?count=1`)
             .then(res => res.json())
             .then( (data) => {
                 if(data.success)

@@ -23,7 +23,7 @@ function Game() {
         else
         {//shuffle the deck
             promise = new Promise( resolve => {
-                fetch(`http://deckofcardsapi.com/api/deck/${deck_id}/shuffle/`)
+                fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/shuffle/`)
                     .then( res => res.json())
                     .then( data => {
                         deck_id = data.deck_id;
@@ -41,7 +41,7 @@ function Game() {
 
         // grab first 26 cards
         return (
-            fetch(`http://deckofcardsapi.com/api/deck/${deck_id}/draw/?count=${count}`)
+            fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/draw/?count=${count}`)
             .then( res => res.json())
         )
     }
@@ -51,7 +51,7 @@ function Game() {
         let codes = cards.map( card => {return card.code} );
 
         return (
-            fetch(`http://deckofcardsapi.com/api/deck/${deck_id}/pile/${pileName}/add/?cards=${codes.join()}`)
+            fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/pile/${pileName}/add/?cards=${codes.join()}`)
             .then( res => res.json() )
             .then( data => {
                 console.log(data);
