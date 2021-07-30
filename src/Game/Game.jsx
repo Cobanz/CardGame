@@ -54,7 +54,7 @@ function Game() {
             fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/pile/${pileName}/add/?cards=${codes.join()}`)
             .then( res => res.json() )
             .then( data => {
-                console.log(data);
+                // console.log(data);
             })
         )
     }
