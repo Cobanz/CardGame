@@ -6,6 +6,10 @@ function PlayArea(props) {
         player: {},
         opponent: {}
     });
+    const [cardsRemaining, setCardsRemaining] = useState({
+        player: 26,
+        opponent: 26
+    });
 
     function displayCard(card)
     {
@@ -23,7 +27,7 @@ function PlayArea(props) {
             .then( (data) => {
                 if(data.success)
                 {
-                    resolve(data.cards[0]);
+                    resolve(data);
                     console.log(data);
                 }
                 else
@@ -36,12 +40,17 @@ function PlayArea(props) {
     
     async function flipCards()
     {
-        let oppCard = await drawCard("opponentHand");
-        let playerCard = await drawCard("playerHand");
+        let oppHand = await drawCard("opponentHand");
+        let playerHand = await drawCard("playerHand");
+
+        setCardsRemaining({
+            player: playerHand.piles.playerHand.remaining,
+            opponent: oppHand.piles.opponentHand.remaining
+        })
 
         setCards({
-            player: playerCard,
-            opponent: oppCard
+            player: playerHand.cards[0],
+            opponent: oppHand.cards[0]
         })
     }
 
