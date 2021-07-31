@@ -42,8 +42,9 @@ function PlayArea(props) {
     {
         let codes = cards.map( card => card.code );
         console.log(codes, "Before add to pile")
+        // console.log(codes.join.toString(), "during join")cv
         return new Promise( resolve => {
-            fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/pile/${pileName}/add/?cards=${codes.join}`)
+            fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/pile/${pileName}/add/?cards=${codes.join(",")}`)
             .then(res => res.json())
             .then( (data) => {
                 if(data.success)
