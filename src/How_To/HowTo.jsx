@@ -2,27 +2,24 @@ import React from 'react'
 
 function HowTo() {
     return (
-        <div>
-            <div>
-            THE DEAL
-            </div>
-            <div>
-                The deck is divided evenly, with each player receiving 26 cards, dealt one at a time, face down. Anyone may deal first. Each player places their stack of cards face down, in front of them.
-            </div>
-            <br/>
-            <div>
-            THE PLAY
-            </div>
-            <div>
-                Each player turns up a card at the same time and the player with the higher card takes both cards and puts them, face down, on the bottom of his stack.
-                If the cards are the same rank, it is War. Each player turns up one card face down and one card face up. The player with the higher cards takes both piles (six cards). If the turned-up cards are again the same rank, each player places another card face down and turns another card face up. The player with the higher card takes all 10 cards, and so on.
+        <div className="how-to-container">
+            <div> <b>THE DEAL : </b>
+                <div>
+                    The deck is divided evenly, with each player receiving 26 cards, dealt one at a time, face down. Anyone may deal first. Each player places their stack of cards face down, in front of them.
+                </div>
             </div>
             <br/>
-            <div>
-            HOW TO KEEP SCORE
+            <div> <b>THE PLAY :</b>
+                <div>
+                    Each player turns up a card at the same time and the player with the higher card takes both cards and puts them, face down, on the bottom of his stack.
+                    If the cards are the same rank, it is a draw and the end of the War. The game will end here. 
+                </div>
             </div>
-            <div>
-                The game ends when one player has won all the cards.
+            <br/>
+            <div> <b>HOW TO KEEP SCORE :</b>
+                <div>
+                    The player with the most cards at the time of a draw or all of the cards in there deck is the winner.
+                </div>
             </div>
             <br/>
         </div>

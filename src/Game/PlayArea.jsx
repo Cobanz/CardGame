@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import cardBack from './space.gif'
 
 function PlayArea(props) {
     let {deck_id} = props;
@@ -16,6 +17,9 @@ function PlayArea(props) {
         if(card)
         {
             return <img alt={card.code} src={card.image} />
+        }
+        else {
+            return <img alt="card-back" src={cardBack}/>
         }
     }
 
@@ -127,8 +131,7 @@ function PlayArea(props) {
             <div>
                 <button onClick={flipCards}>War</button>
                 <div className="player_field">
-                    Player
-                    Cards Remaining: {cardsRemaining.player}
+                    Player Remaining: {cardsRemaining.player}
                     <br></br>
                     Card value: {cardToNumber(cards.player)}
                     <div className="player_deck">
@@ -136,8 +139,7 @@ function PlayArea(props) {
                     </div>
                 </div>
                 <div className="computer_field">
-                    Computer
-                    Cards Remaining: {cardsRemaining.opponent}
+                    Computer Remaining: {cardsRemaining.opponent}
                     <br></br>
                     Card value: {cardToNumber(cards.opponent)}
                     <div className="computer_deck">

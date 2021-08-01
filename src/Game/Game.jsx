@@ -77,7 +77,7 @@ function Game() {
     return (
         <div className="game_container">
             <div>
-                Game {deck_id}
+                Game : {deck_id}
                 <PlayArea deck_id={deck_id} />
             </div>
         </div>
