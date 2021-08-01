@@ -2,7 +2,7 @@ import React, { useEffect} from 'react';
 import PlayArea from './PlayArea';
 
 function Game() {
-    let deck_id = "vgqhkmecfsol";
+    let deck_id = localStorage.deck_id;
 
     function fetchDeckId()
     {
@@ -14,8 +14,11 @@ function Game() {
                 fetch(`https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1`)
                     .then( res => res.json())
                     .then( data => {
-                        deck_id = data.deck_id;
+                        localStorage.deck_id = data.deck_id;
                         resolve(deck_id);
+                    })
+                    .catch( err => {
+                        resolve(err);
                     })
             })
 
@@ -26,8 +29,10 @@ function Game() {
                 fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/shuffle/`)
                     .then( res => res.json())
                     .then( data => {
-                        deck_id = data.deck_id;
                         resolve(deck_id);
+                    })
+                    .catch( err => {
+                        resolve(err);
                     })
             })
         }
@@ -62,7 +67,7 @@ function Game() {
     async function startupSequence()
     {
         let response = await fetchDeckId();
-        console.log(response);
+        console.log("Successfully initialized with deck id: " + response);
 
         splitDeck()
             .then( data => addCardsToPile(data.cards, "playerHand") );
