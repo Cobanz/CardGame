@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import cardBack from './space.gif'
+import GameOver from "./GameOver.jsx"
+// import cardBack from './card-back.jpeg'
+
+
+
+
 
 function PlayArea(props) {
     let {deck_id} = props;
@@ -12,15 +17,18 @@ function PlayArea(props) {
         opponent: 26
     });
 
+    const [isGameOver, setIsGameOver] = useState(false)
+
+
     function displayCard(card)
     {
         if(card)
         {
             return <img alt={card.code} src={card.image} />
         }
-        else {
-            return <img alt="card-back" src={cardBack}/>
-        }
+        // else {
+        //     return <img src={cardBack}/>
+        // }
     }
     //Returns a promise which resolves to the card data
     function drawCard(pileName)
@@ -118,6 +126,7 @@ function PlayArea(props) {
         {
             //tie game
             //whoever has the most cards at the time wins the game
+            setIsGameOver(true) 
             return null;
         }
 
@@ -137,9 +146,16 @@ function PlayArea(props) {
         }
     }
 
+    function reset() {
+        console.log("YEET GAME OVER RESET TIME")
+        setIsGameOver(false)
+        props.restart()
+    }
+
     return (
         <div>
             <div>
+            {isGameOver ? <GameOver reset={reset} isGameOver={isGameOver} cardsRemaining={cardsRemaining}></GameOver> : null }
                 <button onClick={flipCards}>War</button>
                 <div className="player_field">
                     Player Remaining: {cardsRemaining.player}

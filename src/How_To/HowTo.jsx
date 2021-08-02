@@ -1,4 +1,7 @@
 import React from 'react'
+import { ReactVideo } from "reactjs-media";
+import game from "./game_recording.mov";
+import image from "./game-image.png"
 
 function HowTo() {
     return (
@@ -22,6 +25,12 @@ function HowTo() {
                 </div>
             </div>
             <br/>
+            <ReactVideo
+                src={game}
+                poster={image}
+                primaryColor="red"
+                // other props
+            />
         </div>
     )
 }
