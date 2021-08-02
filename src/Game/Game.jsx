@@ -1,42 +1,42 @@
-import React, { useEffect} from 'react';
+import React, { useEffect, useState} from 'react';
 import PlayArea from './PlayArea';
 
 function Game() {
-    let deck_id = localStorage.deck_id;
+    const [deckId, setdeckId] = useState(localStorage.deck_id);
 
+    //RETURNS A PROMISE
+    function shuffleDeck()
+    {
+        let promise = new Promise( resolve => {
+            fetch(`https://deckofcardsapi.com/api/deck/${deckId}/shuffle/`)
+                .then( res => res.json())
+                .then( data => {
+                    resolve(data.deck_id);
+                })
+                .catch( err => {
+                    resolve(false);
+                })
+        })
+
+        return promise;
+    }
+
+    //RETURNS A PROMISE
     function fetchDeckId()
     {
-        let promise = null;
+        let promise = new Promise( resolve => {
+            fetch(`https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1`)
+                .then( res => res.json())
+                .then( data => {
+                    localStorage.deck_id = data.deck_id;
+                    resolve(data.deck_id);
+                })
+                .catch( err => {
+                    resolve(err);
+                })
+        })
 
-        if(!deck_id)
-        {
-            promise = new Promise( resolve => {
-                fetch(`https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1`)
-                    .then( res => res.json())
-                    .then( data => {
-                        localStorage.deck_id = data.deck_id;
-                        resolve(deck_id);
-                    })
-                    .catch( err => {
-                        resolve(err);
-                    })
-            })
-
-        }
-        else
-        {//shuffle the deck
-            promise = new Promise( resolve => {
-                fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/shuffle/`)
-                    .then( res => res.json())
-                    .then( data => {
-                        resolve(deck_id);
-                    })
-                    .catch( err => {
-                        resolve(err);
-                    })
-            })
-        }
-
+       
         return promise;
     }
 
@@ -47,18 +47,19 @@ function Game() {
 
         // grab first 26 cards
         return (
-            fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/draw/?count=${count}`)
+            fetch(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=${count}`)
             .then( res => res.json())
         )
     }
 
     //Returns an empty Promise (SAD!)
+
     function addCardsToPile(cards, pileName)
     {
         let codes = cards.map( card => {return card.code} );
 
         return (
-            fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/pile/${pileName}/add/?cards=${codes.join()}`)
+            fetch(`https://deckofcardsapi.com/api/deck/${deckId}/pile/${pileName}/add/?cards=${codes.join()}`)
             .then( res => res.json() )
             .then( data => {
                 console.log(data);
@@ -68,8 +69,16 @@ function Game() {
 
     async function startupSequence()
     {
-        let response = await fetchDeckId();
-        console.log("Successfully initialized with deck id: " + response);
+        if( await shuffleDeck() ) //If the deck shuffle fails, it's probably because there is no deck_id or the current deck_id is invalid
+        {
+            console.log("Successfully initialized with deck id: " + localStorage.deck_id);
+        }
+        else
+        {
+
+            let newId = await fetchDeckId();
+            console.log("Successfully initialized with deck id: " + newId);
+        }
 
         await splitDeck()
             .then( data => addCardsToPile(data.cards, "playerHand") );
@@ -84,8 +93,8 @@ function Game() {
     return (
         <div className="game_container">
             <div>
-                Game : {deck_id}
-                <PlayArea deck_id={deck_id} />
+                Game : {deckId}
+                <PlayArea deck_id={deckId} />
             </div>
         </div>
     )
