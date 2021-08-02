@@ -32,9 +32,9 @@ const useStyles = makeStyles((theme) => ({
     
         root: {
             maxWidth: 555,
-          marginTop: '40px',
+            marginTop: '40px',
           },
-          media: {
+            media: {
             height: 100,
           },
       },
@@ -65,13 +65,14 @@ function Landing() {
 	  </div>
             <div class="float-container" style ={{
     padding: '20px'}}>
-  <div class="float-child" style={{ width: '30%',
+      <h1>Engineers of CardWorks</h1>
+  <div class="float-child" style={{ width: '28%',
     float: 'left',
     padding: '20px'}}>
   <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
-    style={{height: 500}}
+    style={{height: 440}}
           className={classes.media}
           image="https://media-exp3.licdn.com/dms/image/C4E03AQELfcK4N0lwlg/profile-displayphoto-shrink_800_800/0/1593476412558?e=1628121600&v=beta&t=po62Qs-S0sqTqHL42DRqO16t01MNKq5lv2R0C13jEuM"
           title="Photo of Founder"
@@ -95,7 +96,7 @@ function Landing() {
       </CardActions>
     </Card>
   </div>
-  <div class="float-child"style={{ width: '30%',
+  <div class="float-child"style={{ width: '28%',
     float: 'left',
     padding: '20px'}}>
   <Card className={classes.root}>
@@ -125,7 +126,7 @@ function Landing() {
       </CardActions>
     </Card>
   </div>
-  <div class="float-child"style={{ width: '30%',
+  <div class="float-child"style={{ width: '28%',
     float: 'left',
     padding: '20px'}}>
   <Card className={classes.root}>
@@ -143,6 +144,9 @@ function Landing() {
           <Typography variant="body2" color="textSecondary" component="p">
           Grant is a military vet with 7 years experience in production. He loves playing Dungeons and Dragons and spending time with his son. He is coming up with ideas to expand CardWorks and is always up for a challenge.
 		  </Typography>
+      <br/>
+      <br/>
+      <br/>
         </CardContent>
       </CardActionArea>
       <CardActions>
