@@ -65,7 +65,7 @@ function Landing() {
 	  </div>
             <div class="float-container" style ={{
     padding: '20px'}}>
-      <h1>Engineers</h1>
+      <h1>Engineers of CardWorks</h1>
   <div class="float-child" style={{ width: '28%',
     float: 'left',
     padding: '20px'}}>
