@@ -1,28 +1,44 @@
 # Live Site - [Click Here](https://card-game-nichols-henshaw-gehring.netlify.app/).
-
-
-Ashley Gehring contact info:
-email - ashleyknorr@gmail.com
-linkedin - https://www.linkedin.com/in/ashley-knorr-gehring/
-
-David Henshaw contact info: 
-email - davidhenshaw2014@gmail.com
-linkedin - https://www.linkedin.com/in/david-a-henshaw/
-
-Grant Nichols contact info: 
-email - grantnicholsdev@gmail.com
-linkedin - https://www.linkedin.com/in/grant-nichols-dev/
-
+<h1> How to Play </h1>
+ <div> <b>THE DEAL : </b>
+                <div>
+                    The deck is divided evenly, with each player receiving 26 cards, dealt one at a time, face down. Anyone may deal first. Each player places their stack of cards face down, in front of them.
+                </div>
+            </div>
+            <br/>
+            <div> <b>THE PLAY :</b>
+                <div>
+                    Each player turns up a card at the same time and the player with the higher card takes both cards and puts them, face down, on the bottom of his stack.
+                    If the cards are the same rank, it is a draw and the end of the War. The game will end here. 
+                </div>
+            </div>
+            <br/>
+            <div> <b>HOW TO KEEP SCORE :</b>
+                <div>
+                    The player with the most cards at the time of a draw or all of the cards in there deck is the winner.
+                </div>
+  <br/>
+  <h1> The Engineers </h1>
+Ashley Gehring:
+<a href=https://www.linkedin.com/in/ashley-knorr-gehring/> Linkedin </a>
+</br>
+David Henshaw: 
+<a href=https://www.linkedin.com/in/david-a-henshaw/> Linkedin </a>
+</br>
+Grant Nichols: 
+<a href=https://www.linkedin.com/in/grant-nichols-dev/> Linkedin </a>
 <br/>
+
+<h1>To run the Game Locally </h1>
 ### `npm install` to get all the packages
 
 when ready to play the game locally you can run the command. 
 
-### `npm start` this will open up in a side thing. 
+### `npm start` this will open the app on your browser locally. 
 
 <br/>
 
-This was our first hackathon with Mintbean and we had a lot of fun trying to do smoething we havnt done before with all the logic that the war game had. Please let us know if you enjoyed it. 
+This was our first hackathon with Mintbean and we had a lot of fun trying to do something we havnt done before with all the logic that the war game had. Please let us know if you enjoyed it. 
 
 
 

@@ -3,7 +3,7 @@ import cardBack from './space.gif'
 
 function PlayArea(props) {
     let {deck_id} = props;
-    const [cards, setCards] = useState({
+    const [shownCard, setShownCard] = useState({
         player: {},
         opponent: {}
     });
@@ -22,7 +22,7 @@ function PlayArea(props) {
             return <img alt="card-back" src={cardBack}/>
         }
     }
-
+    //Returns a promise which resolves to the card data
     function drawCard(pileName)
     {
        return new Promise( resolve => {
@@ -32,21 +32,23 @@ function PlayArea(props) {
                 if(data.success)
                 {
                     resolve(data);
-                    // console.log(data);
+                    console.log(data, "draw card");
                 }
                 else
                 {
                     resolve("Cannot draw a card from pile")
+                    console.log(data, "draw card");
                 }
             })
         })
     }
-
+    
+    //Returns a promise which resolves to the pile data
     function addToPile(cards, pileName)
     {
         let codes = cards.map( card => card.code );
         console.log(codes, "Before add to pile")
-        // console.log(codes.join.toString(), "during join")cv
+
         return new Promise( resolve => {
             fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/pile/${pileName}/add/?cards=${codes.join(",")}`)
             .then(res => res.json())
@@ -54,7 +56,7 @@ function PlayArea(props) {
                 if(data.success)
                 {
                     resolve(data);
-                    console.log(data, "After add to pile");
+                    // console.log(data, "After add to pile");
                 }
                 else
                 {
@@ -66,20 +68,26 @@ function PlayArea(props) {
     
     async function flipCards()
     {
+        console.log("begin war");
         let oppHand = await drawCard("opponentHand");
         let playerHand = await drawCard("playerHand");
 
-        addToPile( [playerHand.cards[0], oppHand.cards[0]], "playerHand");
+        let data = await checkWin();
 
-        setCardsRemaining({
-            player: playerHand.piles.playerHand.remaining,
-            opponent: oppHand.piles.opponentHand.remaining
-        })
+        console.log(data, "war result");
 
-        setCards({
+        if(data)
+        {
+            setCardsRemaining({
+                player: data.piles.playerHand.remaining,
+                opponent: data.piles.opponentHand.remaining
+            })
+        }
+
+        setShownCard({
             player: playerHand.cards[0],
             opponent: oppHand.cards[0]
-        })
+        })            
     }
 
     function cardToNumber(card)
@@ -103,26 +111,29 @@ function PlayArea(props) {
 
     async function checkWin()
     {
-        let player = cardToNumber(cards.player);
-        let opp = cardToNumber(cards.opponent);
+        let player = cardToNumber(shownCard.player);
+        let opp = cardToNumber(shownCard.opponent);
 
         if(player === opp)
         {
             //tie game
             //whoever has the most cards at the time wins the game
+            return null;
         }
 
         if(player > opp)
         {
             //player wins
             //put both cards in player pile
-            // let data = await addToPile([cards.player, cards.opponent], "playerHand");
-            // setCardsRemaining({ player: data.remaining})
+            let data = await addToPile( [shownCard.player, shownCard.opponent], "playerHand");
+            return data;
         }
         else
         {
             //opponent wins
             //put both cards in opponent pile
+            let data = await addToPile( [shownCard.player, shownCard.opponent], "opponentHand");
+            return data;
         }
     }
 
@@ -133,17 +144,17 @@ function PlayArea(props) {
                 <div className="player_field">
                     Player Remaining: {cardsRemaining.player}
                     <br></br>
-                    Card value: {cardToNumber(cards.player)}
+                    Card value: {cardToNumber(shownCard.player)}
                     <div className="player_deck">
-                        {displayCard(cards.player)}
+                        {displayCard(shownCard.player)}
                     </div>
                 </div>
                 <div className="computer_field">
                     Computer Remaining: {cardsRemaining.opponent}
                     <br></br>
-                    Card value: {cardToNumber(cards.opponent)}
+                    Card value: {cardToNumber(shownCard.opponent)}
                     <div className="computer_deck">
-                        {displayCard(cards.opponent)}
+                        {displayCard(shownCard.opponent)}
                     </div>
                 </div>
             </div>
