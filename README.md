@@ -2,15 +2,15 @@
 
 
 Ashley Gehring contact info:
-email - ashleyknorr@gmail.com
-linkedin - https://www.linkedin.com/in/ashley-knorr-gehring/
+📧 - ashleyknorr@gmail.com
+<img align="left" alt="HTML5" width="30px" src="https://user-images.githubusercontent.com/73207468/127885247-2b0c0f0e-b606-43ed-955c-123283abbc22.png" />https://www.linkedin.com/in/ashley-knorr-gehring/
 
 David Henshaw contact info: 
-email - davidhenshaw2014@gmail.com
+📧  - davidhenshaw2014@gmail.com
 linkedin - https://www.linkedin.com/in/david-a-henshaw/
 
 Grant Nichols contact info: 
-email - grantnicholsdev@gmail.com
+📧  - grantnicholsdev@gmail.com
 linkedin - https://www.linkedin.com/in/grant-nichols-dev/
 
 <br/>
