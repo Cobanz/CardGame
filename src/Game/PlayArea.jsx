@@ -22,7 +22,7 @@ function PlayArea(props) {
             return <img alt="card-back" src={cardBack}/>
         }
     }
-
+    //Returns a promise which resolves to the card data
     function drawCard(pileName)
     {
        return new Promise( resolve => {
@@ -42,7 +42,8 @@ function PlayArea(props) {
             })
         })
     }
-
+    
+    //Returns a promise which resolves to the pile data
     function addToPile(cards, pileName)
     {
         let codes = cards.map( card => card.code );
