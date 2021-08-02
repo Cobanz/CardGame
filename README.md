@@ -34,7 +34,7 @@ Grant Nichols:
 
 when ready to play the game locally you can run the command. 
 
-### `npm start` this will open app on your browser locally. 
+### `npm start` this will open the app on your browser locally. 
 
 <br/>
 
