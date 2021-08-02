@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react';
 import PlayArea from './PlayArea';
 
 function Game() {
-    const [deckId, setdeckId] = useState(localStorage.deck_id);
+    const [deckId, setDeckId] = useState(localStorage.deck_id);
 
     //RETURNS A PROMISE
     function shuffleDeck()
@@ -77,7 +77,8 @@ function Game() {
         {
 
             let newId = await fetchDeckId();
-            console.log("Successfully initialized with deck id: " + newId);
+            setDeckId(newId);
+            //console.log("Successfully initialized with deck id: " + newId);
         }
 
         await splitDeck()
