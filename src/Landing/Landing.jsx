@@ -65,7 +65,8 @@ function Landing() {
 	  </div>
             <div class="float-container" style ={{
     padding: '20px'}}>
-  <div class="float-child" style={{ width: '30%',
+      <h1>Engineers</h1>
+  <div class="float-child" style={{ width: '28%',
     float: 'left',
     padding: '20px'}}>
   <Card className={classes.root}>
@@ -95,7 +96,7 @@ function Landing() {
       </CardActions>
     </Card>
   </div>
-  <div class="float-child"style={{ width: '30%',
+  <div class="float-child"style={{ width: '28%',
     float: 'left',
     padding: '20px'}}>
   <Card className={classes.root}>
@@ -125,13 +126,13 @@ function Landing() {
       </CardActions>
     </Card>
   </div>
-  <div class="float-child"style={{ width: '30%',
+  <div class="float-child"style={{ width: '28%',
     float: 'left',
     padding: '20px'}}>
   <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
-    style={{height: 480}}
+    style={{height: 440}}
           className={classes.media}
           image= {grant}
           title="Founder Photo"
@@ -143,6 +144,9 @@ function Landing() {
           <Typography variant="body2" color="textSecondary" component="p">
           Grant is a military vet with 7 years experience in production. He loves playing Dungeons and Dragons and spending time with his son. He is coming up with ideas to expand CardWorks and is always up for a challenge.
 		  </Typography>
+      <br/>
+      <br/>
+      <br/>
         </CardContent>
       </CardActionArea>
       <CardActions>
