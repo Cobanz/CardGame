@@ -42,6 +42,8 @@ export default function GameOver(props) {
             Computer Score: {props.cardsRemaining.opponent}
             <br></br>
             Winner : {props.cardsRemaining.player > props.cardsRemaining.opponent ? "Player" : "Computer"}
+            <br></br>
+            Click the War Button again to start over. 
           </DialogContentText>
         </DialogContent>
         <DialogActions>
