@@ -145,8 +145,8 @@ function Landing() {
           Grant is a military vet with 7 years experience in production. He loves playing Dungeons and Dragons and spending time with his son. He is coming up with ideas to expand CardWorks and is always up for a challenge.
 		  </Typography>
       <br/>
-      <br/>
-      <br/>
+      
+      
         </CardContent>
       </CardActionArea>
       <CardActions>
