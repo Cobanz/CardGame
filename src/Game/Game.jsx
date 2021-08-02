@@ -40,6 +40,7 @@ function Game() {
         return promise;
     }
 
+    //Returns a Promise with the data from deckofcardsapi
     function splitDeck()
     {
         let count = 26;
@@ -51,6 +52,7 @@ function Game() {
         )
     }
 
+    //Returns an empty Promise (SAD!)
     function addCardsToPile(cards, pileName)
     {
         let codes = cards.map( card => {return card.code} );
@@ -59,7 +61,7 @@ function Game() {
             fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/pile/${pileName}/add/?cards=${codes.join()}`)
             .then( res => res.json() )
             .then( data => {
-                // console.log(data);
+                console.log(data);
             })
         )
     }
@@ -69,9 +71,9 @@ function Game() {
         let response = await fetchDeckId();
         console.log("Successfully initialized with deck id: " + response);
 
-        splitDeck()
+        await splitDeck()
             .then( data => addCardsToPile(data.cards, "playerHand") );
-        splitDeck()
+        await splitDeck()
             .then( data => addCardsToPile(data.cards, "opponentHand") );
     }
 
