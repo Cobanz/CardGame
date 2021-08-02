@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import cardBack from './space.gif'
+import cardBack from './card-back.jpeg'
 
 function PlayArea(props) {
     let {deck_id} = props;
@@ -18,9 +18,9 @@ function PlayArea(props) {
         {
             return <img alt={card.code} src={card.image} />
         }
-        else {
-            return <img alt="card-back" src={cardBack}/>
-        }
+        // else {
+        //     return <img src={cardBack}/>
+        // }
     }
 
     function drawCard(pileName)
