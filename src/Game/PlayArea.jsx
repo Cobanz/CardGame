@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import GameOver from "./GameOver.jsx"
 import cardBack from './card-back.jpeg'
+
+
 
 function PlayArea(props) {
     let {deck_id} = props;
@@ -11,6 +14,9 @@ function PlayArea(props) {
         player: 26,
         opponent: 26
     });
+
+    const [isGameOver, setIsGameOver] = useState(false)
+
 
     function displayCard(card)
     {
@@ -118,6 +124,7 @@ function PlayArea(props) {
         {
             //tie game
             //whoever has the most cards at the time wins the game
+            setIsGameOver(true) 
             return null;
         }
 
@@ -137,9 +144,16 @@ function PlayArea(props) {
         }
     }
 
+    function reset() {
+        console.log("YEET GAME OVER RESET TIME")
+        setIsGameOver(false)
+        props.restart()
+    }
+
     return (
         <div>
             <div>
+            {isGameOver ? <GameOver reset={reset} isGameOver={isGameOver} cardsRemaining={cardsRemaining}></GameOver> : null }
                 <button onClick={flipCards}>War</button>
                 <div className="player_field">
                     Player Remaining: {cardsRemaining.player}

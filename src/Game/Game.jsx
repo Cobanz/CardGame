@@ -91,11 +91,14 @@ function Game() {
         startupSequence();
     } )
 
+   
+
+
     return (
         <div className="game_container">
             <div>
                 Game : {deckId}
-                <PlayArea deck_id={deckId} />
+                <PlayArea restart={startupSequence} deck_id={deckId} />
             </div>
         </div>
     )
