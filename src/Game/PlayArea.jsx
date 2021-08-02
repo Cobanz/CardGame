@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import GameOver from "./GameOver.jsx"
-import cardBack from './card-back.jpeg'
+// import cardBack from './card-back.jpeg'
 
 
 
