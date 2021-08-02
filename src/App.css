@@ -29,3 +29,37 @@ text-decoration: inherit;
 .nav-bar-li.a:hover{
   background-color: #111;
 }
+
+.how-to-container{
+  text-align: center;
+  padding: 20px 110px 20px 110px;
+
+}
+
+.game_container{
+  display: flex;
+  width: 100vw;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.411);
+
+}
+
+.player_field{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+
+  height: auto;
+  width: 100vw;
+  position: relative;
+}
+
+.computer_field{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+
+  height: auto;
+  width: 100vw;
+  position: relative;
+}
