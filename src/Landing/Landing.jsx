@@ -32,9 +32,9 @@ const useStyles = makeStyles((theme) => ({
     
         root: {
             maxWidth: 555,
-          marginTop: '40px',
+            marginTop: '40px',
           },
-          media: {
+            media: {
             height: 100,
           },
       },
@@ -71,7 +71,7 @@ function Landing() {
   <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
-    style={{height: 500}}
+    style={{height: 440}}
           className={classes.media}
           image="https://media-exp3.licdn.com/dms/image/C4E03AQELfcK4N0lwlg/profile-displayphoto-shrink_800_800/0/1593476412558?e=1628121600&v=beta&t=po62Qs-S0sqTqHL42DRqO16t01MNKq5lv2R0C13jEuM"
           title="Photo of Founder"
@@ -131,7 +131,7 @@ function Landing() {
   <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
-    style={{height: 440}}
+    style={{height: 480}}
           className={classes.media}
           image= {grant}
           title="Founder Photo"
