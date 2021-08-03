@@ -40,7 +40,8 @@ when ready to play the game locally you can run the command.
 
 <br/>
 
-This was our first hackathon with Mintbean and we had a lot of fun trying to do something we havnt done before with all the logic that the war game had. Please let us know if you enjoyed it. 
+# Overview
+This was our first hackathon with Mintbean and we had a lot of fun trying to do something we havnt done before with all the logic that the war game had. We tried to keep as much of the data to the external api as possible so it had its own challenges, I(Grant) think we handled the scope well, the logic was definatly the harder part of the project. Time managment with all the other stuff we had going on during this was fun to work around too, its alot different than just being in bootcamp so you have set the week aside to work on something. Please let us know if you enjoyed it. 
 
 
 
