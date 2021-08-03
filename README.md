@@ -1,4 +1,6 @@
 # Live Site - [Click Here](https://card-game-nichols-henshaw-gehring.netlify.app/).
+# Demo/code walk through - [Click Me](https://youtu.be/_TalTeNWLGA).
+
 <h1> How to Play </h1>
  <div> <b>THE DEAL : </b>
                 <div>
